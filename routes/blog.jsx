@@ -6,5 +6,5 @@ router
     .get('/blogs', blogController.getAllBlog)
     .get('/blog', blogController.getBlog)
     .post('/blog', blogController.addBlog)
-
+ 
 exports.router = router
