@@ -16,3 +16,21 @@ exports.addBlog = ((req,res)=>{
     console.log(doc)
     res.status(200).json(doc)
 })
+exports.deleteBlog = (async(req,res)=>{
+    const id = req.params.id;
+    console.log(id)
+    const doc = await Blog.deleteOne({ _id: id })
+    res.send(doc)
+})
+exports.updateBlog = (async(req,res)=>{
+    const id = req.params.id;
+    console.log(id)
+    const doc = await Blog.findOneAndUpdate({_id:id},req.body)
+    res.send(doc)
+})
+exports.replaceBlog = (async(req,res)=>{
+    const id = req.params.id;
+    console.log(id)
+    const doc = await Blog.findOneAndReplace({_id:id},req.body)
+    res.send(doc)
+})
