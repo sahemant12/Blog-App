@@ -12,10 +12,7 @@ async function main() {
 const express = require('express')
 const app = express()
 app.use(express.json())
-app.use(cors({
-  origin: 'https://blog-h7m8zyute-sahemant12.vercel.app/', // replace with your Vercel app's domain
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.static(process.env.PUBLIC_DIR));
 app.use('/',blogRouter.router)
 
