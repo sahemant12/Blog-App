@@ -1,0 +1,34 @@
+{
+    "builds": [
+      {
+        "src": "index.jsx",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "public/**",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/blogs",
+        "dest": "index.jsx"
+      },
+      {
+        "src": "/blog/(.*)",
+        "dest": "index.jsx"
+      },
+      {
+        "src": "/add",
+        "dest": "public/index.html"
+      },
+      {
+        "src": "/",
+        "dest": "public/index.html"
+      },
+      {
+        "src": "/(.+)",
+        "dest": "public/$1"
+      }
+    ]
+  }
